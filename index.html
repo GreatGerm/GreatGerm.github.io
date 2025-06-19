@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>John Doe | Professional Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #1a1a1a;
+      --primary: #0077b6;
+      --header-bg: #ffffff;
+      --section-bg: #ffffff;
+      --border: #e0e0e0;
+
+      --dark-bg: #121212;
+      --dark-text: #eaeaea;
+      --dark-section: #1e1e1e;
+      --dark-border: #2a2a2a;
+      --dark-primary: #4db8ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      --bg: var(--dark-bg);
+      --text: var(--dark-text);
+      --header-bg: var(--dark-section);
+      --section-bg: var(--dark-section);
+      --border: var(--dark-border);
+      --primary: var(--dark-primary);
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem;
+    }
+
+    nav a {
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-toggle {
+      margin-left: 1rem;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--primary);
+      background: none;
+      color: var(--primary);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    section {
+      background: var(--section-bg);
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--header-bg);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .contact-info p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .contact-info span {
+      display: inline-block;
+      width: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dark-toggle {
+        margin-top: 0.5rem;
+      }
+
+      section {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="avatar.png" alt="Avatar">
+    <h1>John Doe</h1>
+    <p>Full-Stack Developer & UI/UX Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a dedicated software engineer with a passion for designing and building modern, scalable web applications. My expertise lies in front-end development, user experience design, and crafting seamless, accessible interfaces.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <h3>Senior Developer – ABC Technologies</h3>
+    <p><em>Jan 2022 – Present</em></p>
+    <ul>
+      <li>Lead development on enterprise web applications using React and TypeScript</li>
+      <li>Collaborated with cross-functional teams to improve performance by 35%</li>
+      <li>Mentored junior developers and introduced agile development best practices</li>
+    </ul>
+
+    <h3>Web Developer – Creative Studio</h3>
+    <p><em>Jul 2020 – Dec 2021</em></p>
+    <ul>
+      <li>Created responsive landing pages and marketing websites</li>
+      <li>Worked closely with design teams on UI/UX implementation</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <h3>Bachelor of Science in Computer Science</h3>
+    <p><em>XYZ University – 2016 to 2020</em></p>
+    <ul>
+      <li>Graduated Magna Cum Laude</li>
+      <li>Focused on Human-Computer Interaction and Software Engineering</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p><span>📧</span> <a href="mailto:johndoe@example.com">johndoe@example.com</a></p>
+      <p><span>📞</span> (123) 456-7890</p>
+      <p><span>🔗</span> <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 John Doe &mdash; All Rights Reserved
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
